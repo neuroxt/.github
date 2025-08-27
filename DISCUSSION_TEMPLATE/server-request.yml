@@ -1,36 +1,55 @@
-title: "[서버요청] {프로젝트/서비스} - {환경: dev/stg/prod} - {YYYY-MM-DD}"
----
-
-요약
-- 요청 유형: [ ] 신규 [ ] 증설 [ ] 변경 [ ] 종료
-- 환경: [ ] dev [ ] stg [ ] prod
-- 희망 완료일: YYYY-MM-DD
-- 한줄 목적: (예: 모델 배치 테스트용 서버 1대)
-
-사양
-- 크기: CPU / RAM / 디스크 / GPU (예: 4 vCPU / 16 GB / 200 GB / 없음)
-- OS: (예: Ubuntu 22.04)
-- 추가 소프트웨어: (예: Docker, CUDA)
-
-네트워크
-- 공인 IP: [ ] 필요 [ ] 불필요
-- 포트 오픈(인바운드): (예: 22, 80, 443) / 출처: (예: 사내망)
-
-접근
-- 요청자/팀: 
-- 접근자(ID) 및 권한: (예: user1 SSH, user2 SSH+sudo)
-- 인증: [ ] SSH key [ ] SSO [ ] 기타
-
-보안/운영
-- 데이터 민감도: [ ] 일반 [ ] 내부 [ ] PII/PHI 포함(간단 설명)
-- 백업: [ ] 예(주기:) [ ] 아니오
-- 모니터링 알림: [ ] 기본 [ ] 불필요
-- 예상 사용 기간/종료 기준: (예: 3개월, 프로젝트 종료 시 삭제)
-
-비용/승인
-- 청구 코드/예산: 
-- 승인: @infra @security @owner
-
-첨부(선택)
-- 참고 문서/구성도 링크:
-- 기타:
+title: "[General] "
+labels: ["General Introduction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is text that will show up in the template!
+  - type: textarea
+    id: improvements
+    attributes:
+      label: Top 3 improvements
+      description: "What are the top 3 improvements we could make to this project?"
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Markdown header
+        And some more markdown
+  - type: input
+    id: has-id
+    attributes:
+      label: Suggestions
+      description: A description about suggestions to help you
+    validations:
+      required: true
+  - type: dropdown
+    id: download
+    attributes:
+      label: Which area of this project could be most improved?
+      options:
+        - Documentation
+        - Pull request review time
+        - Bug fix time
+        - Release cadence
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Check that box!
+      options:
+        - label: This one!
+          required: true
+        - label: I won't stop you if you check this one, too
+  - type: markdown
+    attributes:
+      value: |
+        ### The thrilling conclusion
+        _to our template_
